@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Play with Canvas</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+
+      <canvas></canvas>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+      <script>
+        var canvas_elements = document.getElementsByTagName( "canvas" ),
+        canvas = canvas_elements.item(0),
+        ctx = canvas.getContext("2d"),
+        TAU = Math.PI * 2;
+
+        canvas.width = canvas.height = 400;
+
+        ctx.fillStyle = "blue";
+        ctx.beginPath();
+        ctx.arc(50,50,25,0, TAU, true);
+        ctx.arc(150,50,25,0, TAU, true);
+        ctx.fill();
+
+        ctx.fillStyle = "red";
+        ctx.beginPath();
+        ctx.moveTo(100, 75);
+        ctx.lineTo(75, 125);
+        ctx.lineTo(125, 125);
+        ctx.fill();
+
+        ctx.strokeStyle = "green";
+        ctx.beginPath();
+        ctx.scale(1, 0.5);
+        ctx.arc(100,300,75, Math.PI, 0, true);
+        ctx.closePath();
+        ctx.stroke();
+      </script>
+
+    </body>
+</html>
